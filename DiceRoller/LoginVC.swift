@@ -51,13 +51,14 @@ class LoginVC: UIViewController
                 {
                     // Do stuff after successful login.
                     print("The user id is: \(user!.objectId)")
+                    PhoneCore.UID = String(user!.objectId!)
                     let uhvc = self.storyboard?.instantiateViewControllerWithIdentifier("UserHomepageVC") as! UserHomepageVC
                     self.presentViewController(uhvc, animated: true, completion: nil)
                 }
                 else
                 {
                     // The login failed. Check error to see why.
-                    PhoneCore.showAlert("Login Error", message: "\(error!.userInfo["error"]!)", presentingViewController: self, onScreenDelay: 2)
+                    PhoneCore.showAlert("Login Error", message: String((error!.userInfo["error"]!)), presentingViewController: self, onScreenDelay: 2)
                 }
             }
         }

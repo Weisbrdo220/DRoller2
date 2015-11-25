@@ -10,9 +10,12 @@ import UIKit
 
 class UserHomepageVC: UIViewController {
 
-    override func viewDidLoad() {
+    @IBOutlet weak var IdShow: UILabel!
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
+        IdShow.text = "User ID is:\(PhoneCore.UID)"
+        
         // Do any additional setup after loading the view.
     }
 

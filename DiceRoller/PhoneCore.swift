@@ -24,4 +24,6 @@ class PhoneCore: NSObject
         })
 
     }
+    static var UID = ""
+    
 }
